@@ -7,11 +7,12 @@
     <groupId>vn.mytrack</groupId>
     <artifactId>tracking-backend</artifactId>
     <version>1.0</version>
+    <packaging>pom</packaging>
 
     <modules>
-        <module>admin</module>
-        <module>track</module>
         <module>gateway</module>
         <module>uaa</module>
+        <module>admin</module>
+        <module>track</module>
     </modules>
 </project>

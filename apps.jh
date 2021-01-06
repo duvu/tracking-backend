@@ -1,0 +1,208 @@
+application {
+  config {
+    applicationType gateway
+    authenticationType uaa
+    baseName gateway
+    blueprints []
+    buildTool maven
+    cacheProvider hazelcast
+    clientFramework angularX
+    clientPackageManager npm
+    clientTheme none
+    creationTimestamp 1609843585369
+    databaseType sql
+    devDatabaseType mysql
+    dtoSuffix DTO
+    embeddableLaunchScript false
+    enableHibernateCache true
+    enableSwaggerCodegen false
+    enableTranslation true
+    jhiPrefix trak
+    jhipsterVersion "6.10.5"
+    languages [en, vi]
+    nativeLanguage en
+    otherModules []
+    packageName vn.mytrack.gateway
+    prodDatabaseType mysql
+    searchEngine false
+    serverPort 8080
+    serviceDiscoveryType eureka
+    skipClient false
+    skipServer false
+    skipUserManagement false
+    testFrameworks []
+    uaaBaseName "uaa"
+    useSass true
+    websocket spring-websocket
+  }
+}
+
+application {
+  config {
+    applicationType microservice
+    authenticationType uaa
+    baseName admin
+    blueprints []
+    buildTool maven
+    cacheProvider hazelcast
+    clientPackageManager npm
+    creationTimestamp 1609843831924
+    databaseType sql
+    devDatabaseType mysql
+    dtoSuffix DTO
+    embeddableLaunchScript false
+    enableHibernateCache true
+    enableSwaggerCodegen false
+    enableTranslation true
+    jhiPrefix trak
+    jhipsterVersion "6.10.5"
+    jwtSecretKey "MTZiNzk3MDVkZGFmNWJmZjkwY2MxNDQ4ZWYwZmNkYTZkNjQ2OGI0MWVjMjk1NzBhZTVmOTQ2ZDFhY2RhNTUyYWFhYTFkNDNhNTdhZmQ3MDIxMWM1NDJhYWJjZWUzY2U5ZTA5Y2M3MjIyY2VlMjdkZjQ1M2JkM2Q3MzQxNzFjMzk="
+    languages [en, vi]
+    nativeLanguage en
+    otherModules []
+    packageName vn.mytrack.admin
+    prodDatabaseType mysql
+    searchEngine false
+    serverPort 8082
+    serviceDiscoveryType eureka
+    skipClient true
+    skipUserManagement true
+    testFrameworks []
+    uaaBaseName "uaa"
+    websocket false
+  }
+
+  entities Device
+}
+
+application {
+  config {
+    applicationType microservice
+    authenticationType uaa
+    baseName track
+    blueprints []
+    buildTool maven
+    cacheProvider hazelcast
+    clientPackageManager npm
+    creationTimestamp 1609843707719
+    databaseType cassandra
+    devDatabaseType cassandra
+    dtoSuffix DTO
+    embeddableLaunchScript false
+    enableHibernateCache false
+    enableSwaggerCodegen false
+    enableTranslation true
+    jhiPrefix trak
+    jhipsterVersion "6.10.5"
+    jwtSecretKey "YzYzZWRhODg4NTBjMWM1NmMxYWUzYjMwN2ViNjIzY2ZjYTY1OGMwOWQyMzgwZjUyNWRmNDE2NWI1YWI4M2Y0MGJkMmM0ZGZjYzUyY2UzODQzYWQ5ZjhhNGUxOTllN2VjMWJiNmIyY2QzMmFjNDIyMTM2MTY4NzE5NTJmMzE5MjI="
+    languages [en, vi]
+    nativeLanguage en
+    otherModules []
+    packageName vn.mytrack.track
+    prodDatabaseType cassandra
+    searchEngine false
+    serverPort 8081
+    serviceDiscoveryType eureka
+    skipClient true
+    skipUserManagement true
+    testFrameworks []
+    uaaBaseName "uaa"
+    websocket spring-websocket
+  }
+	entities EventData
+	filter EventData
+}
+
+application {
+  config {
+    applicationType uaa
+    authenticationType uaa
+    baseName uaa
+    blueprints []
+    buildTool maven
+    cacheProvider hazelcast
+    clientPackageManager npm
+    creationTimestamp 1609843497259
+    databaseType sql
+    devDatabaseType mysql
+    dtoSuffix DTO
+    embeddableLaunchScript false
+    enableHibernateCache true
+    enableSwaggerCodegen false
+    enableTranslation true
+    jhiPrefix trak
+    jhipsterVersion "6.10.5"
+    jwtSecretKey "OTk5YWRiMGZlMDE4NjJhMmUxNzdiZWJiNTRjN2IxN2NhOWMyYTQ4ZDJkM2I0ZTNlNTdjNzI3ZDFjNWY4MzYwNGJkNjdjYjhjZGFkMWMxZmQ0YzI2ZGZiYzNiNTUzZDI2YzJjMDZiNGFlMDJjYTIxOWY0NjVlYTM3MGRiNWMwOGQ="
+    languages [en, vi]
+    nativeLanguage en
+    otherModules []
+    packageName vn.mytrack.uaa
+    prodDatabaseType mysql
+    searchEngine false
+    serverPort 9999
+    serviceDiscoveryType eureka
+    skipClient true
+    skipUserManagement false
+    testFrameworks []
+    websocket false
+  }
+}
+
+entity Device {
+    deviceId String
+    imei String
+
+}
+
+entity EventData {
+	deviceId String,
+    timestamp Long,
+    fixedTime Long,
+    latitude Double,
+    longitude Double,
+    altitude Double,
+    speedKPH Double,
+    heading Double,
+    accuracy Double,
+    address String,
+    distanceKM Double
+    odometerKM Double
+    odometerOffsetKM Double
+    geozoneId Long
+    gpsFixType Integer
+    gpsFixStatus Long
+    gpsAge Long
+    horzAccuracy Double
+    vertAccuracy Double
+    hdop Double
+    satelliteCount Integer
+    batteryLevel Double
+    batteryVolts Double
+    batteryTemp Double
+    signalStrength Double
+    driverId String
+    driverStatus Long
+    driverMessage String
+    rfidTag String
+    fuelPressure Double
+    fuelUsage Double
+    fuelTemp Double
+    fuelLevel Double
+    fuelRemain Double
+    engineRpm Long
+    engineHours Double
+    engineOnHours Double
+    engineLoad Double
+    idleHours Double
+    workHours Double
+    tirePressure Double
+    tireTemp Double
+    mcc Integer
+    mnc Integer
+    lac Integer
+    cid Integer
+    rssi Integer
+    remoteAddress String
+    remotePort Integer
+    rawData String
+}
